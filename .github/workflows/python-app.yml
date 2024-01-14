@@ -2,7 +2,7 @@ name: Bilibili Collection Update
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs at 8:00 AM every day
+    - cron: '0 16 * * *'  # Runs at 0:00 AM beijing time every day
 
 jobs:
   update-collection:
