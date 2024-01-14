@@ -1,0 +1,32 @@
+name: Bilibili Collection Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs at 8:00 AM every day
+
+jobs:
+  update-collection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install Python Dependencies
+        run: |
+          pip install requests
+
+      - name: Run Bilibili Collection Update Script
+        run: python .github/scripts/get_video_info.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name 'Raccoon'
+          git config --global user.email '1665651288@qq.com'
+          git add .
+          git commit -m "Updated Bilibili Collections"
+          git push
