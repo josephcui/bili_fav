@@ -2,11 +2,12 @@ name: Bilibili Collection Update
 
 on:
   schedule:
-    - cron: '0 16 * * *'  # Runs at 0:00 AM beijing time every day
-
+    - cron: '*/10 * * * *'
 jobs:
   update-collection:
     runs-on: ubuntu-latest
+    env:
+      SESSDATA: ${{ secrets.SESSDATA }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
