@@ -2,7 +2,7 @@ name: Bilibili Collection Update
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '13 16 * * *'
 jobs:
   update-collection:
     runs-on: ubuntu-latest
@@ -22,7 +22,7 @@ jobs:
           pip install requests
 
       - name: Run Bilibili Collection Update Script
-        run: python .github/scripts/get_video_info.py
+        run: python get_video_info.py
 
       - name: Commit and Push Changes
         run: |
