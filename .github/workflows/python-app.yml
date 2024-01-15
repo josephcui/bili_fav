@@ -26,6 +26,10 @@ jobs:
       - name: Run Bilibili Collection Update Script
         run: python get_video_info.py
 
+      - name: Pull Latest Changes
+        run: |
+          git pull origin main
+          
       - name: Commit and Push Changes
         run: |
           git config --global user.name 'Raccoon'
