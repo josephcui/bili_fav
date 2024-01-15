@@ -2,7 +2,7 @@ name: Bilibili Collection Update
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '27 3 * * *'
 jobs:
   update-collection:
     runs-on: ubuntu-latest
