@@ -119,6 +119,8 @@ if __name__ == "__main__":
             all_videos = get_videos_from_collection(COLLECTION_ID)
             if all_videos:
                 update_markdown_file(all_videos)
+                all_bvids = {video['bvid'] for video in all_videos}
+                write_bvid_cache(CACHE_FILE, all_bvids)
                 logging.info(f"Processed {len(all_videos)} past videos.")
         else:
             # Update with new videos only
