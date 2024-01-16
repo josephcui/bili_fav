@@ -59,3 +59,9 @@ jobs:
           git commit -m "Updated Bilibili Collections"
           git push
 ```
+
+## TODO
+1. 维护失效资源库，周级别更新
+2. 提取视频cc字幕
+3. 请求LLM获取视频summary
+4. 基于面向对象思想重构项目
